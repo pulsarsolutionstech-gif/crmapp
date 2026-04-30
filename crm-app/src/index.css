@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-crm-bg-start: #d2e4f0;
+  --color-crm-bg-end: #eaf1da;
+  
+  --color-crm-sidebar: #1f1f23;
+  --color-crm-sidebar-icon: #7d808a;
+  --color-crm-sidebar-active: #2c2c31;
+
+  --color-crm-blue: #235efb;
+  --color-crm-teal: #4b92a4;
+  --color-crm-black: #060606;
+  --color-crm-yellow: #f2e33c;
+  --color-crm-light-yellow: #fbee79;
+
+  --color-crm-glass: rgba(255, 255, 255, 0.4);
+  --color-crm-glass-border: rgba(255, 255, 255, 0.6);
+
+  --font-sans: 'Inter', 'Space Grotesk', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  background: linear-gradient(135deg, var(--color-crm-bg-start) 0%, var(--color-crm-bg-end) 100%);
+  color: #1a1a1a;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.glass-panel {
+  background: var(--color-crm-glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--color-crm-glass-border);
+  border-radius: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.glass-button:hover {
+  transform: scale(1.05) translateY(-1px);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.magnetic-hover {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.magnetic-hover:hover {
+  transform: scale(1.03) translateY(-1px);
+}
+
+/* Global noise overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.05;
+}
